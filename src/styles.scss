@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+
+.link{
+    transition: all .5s ease;
+}
+
+.link:hover{
+    cursor: pointer;
+    font-size: scale(1.08);
+}
+
+[center]{
+    text-align: center;
+}

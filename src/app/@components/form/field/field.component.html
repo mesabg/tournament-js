@@ -1,0 +1,74 @@
+<!--Main input template-->
+<div 
+	class="input-field col s12"
+	[formGroup]="form">
+	
+	<!--Icon-->
+	<i 
+		*ngIf="field.icon"	
+		class="{{field.icon}} material-icons prefix" 
+		aria-hidden="true"></i>
+	
+	<!--Input (input, select, textarea)-->
+	<select 
+		*ngIf="type === 'select'"
+		[formControlName]="field.key"
+		[id]="field.key"
+		[ngClass]="{
+			'valid': control.valid && !control.pristine,
+			'invalid': control.invalid && !control.pristine
+		}">
+		<option 
+			*ngFor="let option of field.options;"
+			[attr.value]="option.value"
+			[selected]="option.selected"> {{option.label}} </option>
+	</select>
+
+	<textarea 
+		*ngIf="type === 'textarea'"
+		[formControlName]="field.key"
+		[id]="field.key"
+		class="materialize-textarea"
+		[ngClass]="{
+			'valid': control.valid && !control.pristine,
+			'invalid': control.invalid && !control.pristine
+		}">
+	</textarea>
+
+	<input 
+		[formControlName]="field.key"
+		[id]="field.key"
+		[type]="type"
+		[attr.placeholder]="field.placeholder"
+		[ngClass]="{
+			'valid': control.valid && !control.pristine,
+			'invalid': control.invalid && !control.pristine,
+			'datepicker': type === 'date'
+		}">
+
+	
+	<!--Labels-->
+	<!--Initial state-->
+	<label
+		*ngIf="control.pristine"
+		[ngClass]="{'active': control.pristine && type != 'select'}"
+		[attr.for]="field.key">{{field.label}}</label>
+	
+	<!--Errors states-->
+	<ng-template ngFor let-validAsset [ngForOf]="field.validAssets">
+	<label
+		*ngIf="control.hasError(validAsset.name) && !control.pristine"
+		[ngClass]="{'active': control.invalid}"
+		[attr.for]="field.key" 
+		[attr.data-error]="validAsset.errorMsg">{{field.label}}</label>
+	</ng-template>
+
+
+	<!--Valid state-->
+	<label
+		*ngIf="control.valid && !control.pristine"
+		class="active"
+		[attr.for]="field.key"
+		[attr.data-success]="field.successMsg">{{field.label}}</label>
+</div>
+<!--End Main input template-->

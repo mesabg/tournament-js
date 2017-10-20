@@ -1,0 +1,14 @@
+<!--<tr 
+    class="row row-header"
+    #rowHeader>-->
+    <td 
+        *ngFor="let column of data.columns;" 
+        class="row"
+        [attr.id]="column.id"
+        [innerHTML]="trustHTML(column.content)"></td>
+<!--</tr>-->
+<!--<tr 
+    class="row row-body"
+    [innerHTML]="trustHTML(data.innerContent)"
+    #rowBody>
+</tr>-->

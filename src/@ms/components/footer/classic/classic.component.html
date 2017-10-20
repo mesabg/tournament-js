@@ -1,0 +1,21 @@
+<footer class="page-footer component" #componentFooter>
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">{{data.title}}</h5>
+                <p class="grey-text text-lighten-4">{{data.description}}</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">{{data.linkTitle}}</h5>
+                <ul>
+                    <li *ngFor="let link of data.links;"><a [attr.href]="link.href">{{link.title}}</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            <span>{{data.copyright}}</span>
+        </div>
+    </div>
+</footer>

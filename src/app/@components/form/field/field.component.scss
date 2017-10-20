@@ -1,0 +1,98 @@
+/*-------------
+ Defining colors
+--------------*/
+$base-color: black;
+$focus-color: #1f6d9d;
+$focus-base-color: #1f6d9f;
+$valid-color: #72c380;
+$invalid-color: #990000;
+
+/* label color */
+.input-field label {
+    color: $base-color !important;
+}
+
+/* label focus color */
+.input-field input:focus + label,
+.input-field input[focus] + label,
+.input-field input.ng-pristine label,
+.input-field input.ng-pristine + label[focus],
+.input-field label.light{
+    color: $focus-color !important;
+}
+
+/* label underline focus color */
+.input-field input:focus,
+.input-field input[focus] {
+    border-bottom: 1px solid $focus-color !important;
+    box-shadow: 0 1px 0 0 $focus-color !important;
+}
+
+/* valid color */
+.input-field input.valid,
+.input-field input.ng-valid {
+    border-bottom: 1px solid $valid-color !important;
+    box-shadow: 0 1px 0 0 $valid-color !important;
+}
+
+/* invalid color */
+.input-field input.invalid,
+.input-field input.ng-invalid.ng-touched {
+    border-bottom: 1px solid $invalid-color !important;
+    box-shadow: 0 1px 0 0 $invalid-color !important;
+}
+
+/* icon prefix focus color */
+.input-field .prefix.active {
+    color: $focus-color !important;
+}
+
+/*Textarea*/
+textarea:focus{
+    border-bottom: 1px solid $focus-color !important;
+    box-shadow: 0 1px 0 0 $focus-color !important;
+}
+/*
+textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #26a69a;
+    box-shadow: 0 1px 0 0 #26a69a;
+}*/
+
+/*Datepicker*/
+.picker__box{
+    background-color: white !important;
+}
+
+.picker__date-display{
+    background-color: $focus-color !important;
+}
+
+.picker__weekday-display{
+    background-color: $focus-base-color !important;
+}
+
+.btn-flat.picker__close{
+    color: $focus-base-color !important;
+}
+
+.btn-flat.picker__today{
+    color: $focus-base-color !important;
+}
+
+.picker__day--highlighted{
+    color: $focus-base-color !important;
+}
+
+.picker__day--today{
+    color: $focus-base-color !important;
+}
+
+.picker__day--selected{
+    color: white !important;
+    background-color: $focus-base-color !important;
+}
+
+/*Select*/
+.select-wrapper ul li span{
+    color: $focus-base-color !important;
+}

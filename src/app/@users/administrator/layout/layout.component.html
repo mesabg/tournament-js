@@ -1,0 +1,9 @@
+<ms-navbar-extended 
+    [data]="navbarData"
+    (onTabClick)="changeRoute($event)"></ms-navbar-extended>
+
+<!--Inner pages goes here-->
+<router-outlet></router-outlet>
+
+<ms-footer-classic 
+    [data]="footerData"></ms-footer-classic>

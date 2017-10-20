@@ -1,0 +1,13 @@
+<table class="responsive-table centered striped highlight">
+    <thead>
+        <tr>
+            <th 
+                *ngFor="let column of data.columns;"> {{column.title}} </th>
+            <th 
+                *ngIf="data.actions.active"> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <div #tableBody></div>
+    </tbody>
+</table>

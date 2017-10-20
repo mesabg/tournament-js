@@ -1,0 +1,8 @@
+<nav class="component" #componentNav>
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo right" (click)="onBrandClick.emit()"> <i [attr.class]="data.brandIconClass"></i> </a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li *ngFor="let link of data.links"><a [attr.href]="link.href"> {{link.title}} </a></li>
+        </ul>
+    </div>
+</nav>

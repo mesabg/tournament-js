@@ -1,0 +1,21 @@
+<!--Main form template-->
+<form 
+	class="row ms-form"
+	(ngSubmit)="formService.submit()"
+	[formGroup]="formService.formGroup">
+
+	<!--Fields-->
+	<div tournament-custom-field
+		*ngFor="let field of formService.fields"
+		class="col {{field.sizeClass}}"
+		[field]="field"
+		[form]="formService.formGroup">
+	</div>
+
+	<!--Submit button-->
+	<button type="submit" [disabled]="!formService.formGroup.valid || formService.formGroup.pristine || formService.submitLock">
+		<ng-content *ngIf="!formService.submitLock"></ng-content>
+		<span *ngIf="formService.submitLock">Subiendo ...</span>
+	</button>
+</form>
+<!--End Main form template-->
